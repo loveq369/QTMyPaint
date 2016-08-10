@@ -29,8 +29,6 @@
 
 #ifdef HAVE_JSON_C
 // Allow the C99 define from json.h
-#undef TRUE
-#undef FALSE
 #include <json.h>
 #endif // HAVE_JSON_C
 
@@ -61,14 +59,12 @@
    copied into the global one, leaving the state intact.
  */
 
-
 /**
   * MyPaintBrush:
   *
   * The MyPaint brush engine class.
   */
 struct _MyPaintBrush {
-
     gboolean print_inputs; // debug menu
     // for stroke splitting (undo/redo)
     double stroke_total_painting_time;
@@ -98,7 +94,6 @@ struct _MyPaintBrush {
 #endif
     int refcount;
 };
-
 
 void settings_base_values_have_changed (MyPaintBrush *self);
 
